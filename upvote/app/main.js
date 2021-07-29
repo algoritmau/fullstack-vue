@@ -8,6 +8,15 @@ const upvoteApp = {
     sortedSubmissions() {
       return this.submissions.sort((a, b) => b.votes - a.votes)
     }
+  },
+  methods: {
+    upvote(submissionId) {
+      const submission = this.submissions.find(
+        (submission) => submission.id === submissionId
+      )
+
+      submission.votes++
+    }
   }
 }
 
